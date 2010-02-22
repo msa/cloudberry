@@ -1,0 +1,16 @@
+% This is an -*- erlang -*- file.
+
+{application, cloudberry,
+ [{description, "Cloudberry"},
+  {vsn, "%VSN%"},
+  {modules, [
+      module_loader.erl,
+      parameter_extractor.erl,
+      step_runner.erl,
+      cloudberry_steps.erl,
+      mysteps.erl,
+      scenario_extractor.erl,
+      story_runner.erl]},
+  {registered,[]},
+  {applications, [stdlib]},
+  {env, []}]}.

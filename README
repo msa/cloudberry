@@ -1,0 +1,50 @@
+=================================================================
+Welcome to Cloudberry
+=================================================================
+In cloudberry I'm experimenting with ATDD (Acceptance Test Driven
+Development) or Story Driven Development for Erlang.
+
+Being a functional language poses a bit of a problem when it
+comes to the standard approach of Given When Thens that the BDD
+scholars advocate. I can't say that I have it all figured out yet
+but I'll keep experimenting with it here for a while to see if I
+_can_ figure it out.
+
+My current assumption is that I probably have to provide a story
+syntax alternative that passes all arguments and the expected
+outcome as a signle parameter list to the "step". However, there
+are possible work-arounds to get it much closer to the original
+BDD-style. I'm just not sure whether it is the right thing to do.
+Certainly the language anf mind of the customer does not change
+with choice of implementing a system in a language without side
+effects. On the other hand, the mind of the developer does, and
+maybe we need to take that into account. Stay tuned, or better
+yet - provide feedback, ideas or other forms of input.
+
+Cheers,
+Måns Sandström (mans.sandstrom@adaptiv.se)
+
+=================================================================
+FAQ
+=================================================================
+
+Can I use it?
+- Well, of course you can! But there are still
+a few things missing from my initial vision.
+
+How do I build it?
+- Ahh, well, I'll fix this and other structural
+things later. For now you can simply build it with the command:
+erlc *
+in the directory of the project files.
+
+Is there any documentation?
+- The sourcefiles themselves contains a fair amount of tests and docs.
+It should be graspable if you have any experience with Erlang at all.
+
+How do I run it?
+To try it out:
+  1. Compile project with erlc * in the project source folder.
+  2. Start erl in the project source folder.
+  3. issue: story_runner("./")  # Run all stories found in this folder
+  4. Watch it succeed.
