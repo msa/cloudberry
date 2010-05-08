@@ -27,4 +27,4 @@ docs:
 
 test: subdirs
 	@echo Testing...
-	@erl -noshell -pa ebin -eval 'eunit:test([step_runner, story_runner, parameter_extractor, scenario_extractor])' -s init stop
+	@erl -noshell -pa ebin -eval 'eunit:test([step_runner, story_runner, parameter_extractor, scenario_extractor, story_reader])' -s init stop

@@ -1,17 +1,12 @@
 -module(cloudberry_steps).
 -compile(export_all).
 
-step("Givet att jag märker det") ->
-  io:format("Märksteg");
+step("Givet att jag märker det") -> 0;
 
-step("När den här storyn körs") ->
-  io:format("Körsteg");
+step("När den här storyn körs") -> 0;
 
-step("Så blir jag glad") ->
-  io:format("Gladsteg").
+step("Så blir jag glad") -> 0.
 
-step("Givet att jag har en $1", [Parameter]) ->
-  io:format("Parametersteg");
+step("Givet att jag har en $1", [Parameter]) -> 0;
 
-step("När $1 kan skrivas ut med sin vikt $2 $3", [Namn, Vikt, Sort]) ->
-  io:format(string:concat(string:concat(Namn, " väger "), string:concat(Vikt, Sort))).
+step("När flera $1 kan hanteras $2 $3", [Parametertext, Parameter2, Parameter3]) -> 0.

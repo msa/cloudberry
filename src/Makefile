@@ -16,7 +16,8 @@ SOURCES= \
 	cloudberry_steps.erl \
 	mysteps.erl \
 	scenario_extractor.erl \
-	story_runner.erl
+	story_runner.erl \
+	story_reader.erl
 
 OBJECTS=$(SOURCES:%.erl=$(EBIN)/%.$(EMULATOR)) $(APP_TARGET) $(APPUP_TARGET)
 

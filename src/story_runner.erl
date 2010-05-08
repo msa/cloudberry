@@ -28,21 +28,15 @@ run_story([Story|Stories], Count) ->
   run_story(Stories, Count + 1).
 
 for_each(Story) ->
-  {ok, File} = file:open(Story, read),
-  for_each_step(io:get_line(File, ""), File).
+  Text = story_reader:read(Story),
+  Scenarios = scenario_extractor:extract_scenarios(Text),
+  run_steps(Scenarios).
 
-for_each_step(eof, File) ->
-  file:close(File);
+run_steps([{scenario, ScenarioDescription, Steps}| Scenarios]) ->
+  io:format(string:concat(string:concat("~n", ScenarioDescription), "~n")),
+  step_runner:run_steps(Steps),
+  run_steps(Scenarios);
 
-for_each_step(Line, File) ->
-  TrimmedLine = re:replace(Line, "\n", "", [{return, list}]),
-  run_step(string:len(TrimmedLine), TrimmedLine, File).
+run_steps([]) -> done.
 
-run_step(0, _, File) ->
-  for_each_step(io:get_line(File, ""), File);
 
-run_step(_, Line, File) ->
-  {StepText, Parameters} = parameter_extractor:extract(Line),
-  io:format(string:concat(string:concat("\nRunning step: ", StepText), "\n")),
-  step_runner:run_step(StepText, Parameters, cloudberry_steps),
-  for_each_step(io:get_line(File, ""), File).
