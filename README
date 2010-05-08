@@ -12,10 +12,10 @@ _can_ figure it out.
 
 My current assumption is that I probably have to provide a story
 syntax alternative that passes all arguments and the expected
-outcome as a signle parameter list to the "step". However, there
+outcome as a single parameter list to the "step". However, there
 are possible work-arounds to get it much closer to the original
 BDD-style. I'm just not sure whether it is the right thing to do.
-Certainly the language anf mind of the customer does not change
+Certainly the language and mind of the customer does not change
 with choice of implementing a system in a language without side
 effects. On the other hand, the mind of the developer does, and
 maybe we need to take that into account. Stay tuned, or better
@@ -30,21 +30,16 @@ FAQ
 
 Can I use it?
 - Well, of course you can! But there are still
-a few things missing from my initial vision.
+a few things missing from my initial vision and there are some
+rough edges.
 
 How do I build it?
-- Ahh, well, I'll fix this and other structural
-things later. For now you can simply build it with the command:
-erlc *
-in the directory of the project files.
+Just 'make' should do it for you.
+'make test' will tell you if the code is in any good shape.
 
 Is there any documentation?
 - The sourcefiles themselves contains a fair amount of tests and docs.
 It should be graspable if you have any experience with Erlang at all.
 
 How do I run it?
-To try it out:
-  1. Compile project with erlc * in the project source folder.
-  2. Start erl in the project source folder.
-  3. issue: story_runner("./")  # Run all stories found in this folder
-  4. Watch it succeed.
+Hmm... I'll be sure to write something usefull here in a short while...
